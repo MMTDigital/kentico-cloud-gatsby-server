@@ -40,13 +40,20 @@ const typeDefs = gql`
 const resolvers = {
   Query: {
     books: () => books,
-    people: () => rp({
-                      uri: `https://deliver.kenticocloud.com/7af4a1c9-4f89-428d-8b96-0f3a8bad840a/items`,
-                      json: true 
-                    })
-                    .then(res => res.items.elements)
-                    .catch(e => console.warn(e))
-  },
+    people: (person) => {
+      return rp({
+        uri: `https://deliver.kenticocloud.com/7af4a1c9-4f89-428d-8b96-0f3a8bad840a/items`,
+        json: true
+      })
+      .then(res => {
+        const flattened = res.items.map(item => {
+          return { item, ...item.elements }
+        })
+        return flattened
+      })
+      .catch(e => console.warn(e))
+    }
+  }
 };
 
 // In the most basic sense, the ApolloServer can be started
