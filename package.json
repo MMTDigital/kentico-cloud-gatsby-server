@@ -1,17 +1,23 @@
 {
   "name": "kentico-cloud-graphql-server",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "cross-env node index.js",
+    "generate-schema": "cross-env kc-generate-gql-schema --projectId $KENTICO_CLOUD_PROJECT_ID --createModule --outputFile schema.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MMTDigital/kentico-cloud-graphql-server.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "graphql",
+    "kentico-cloud",
+    "headless",
+    "static"
+  ],
+  "author": "James Sear (MMT Digital), Jarryd Trokis (MMT Digital)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/MMTDigital/kentico-cloud-graphql-server/issues"
@@ -20,7 +26,11 @@
   "dependencies": {
     "apollo-server": "^2.3.1",
     "graphql": "^14.1.1",
-    "request": "^2.88.0",
-    "request-promise": "^4.2.2"
+    "kentico-cloud-delivery": "^5.3.1",
+    "kentico-cloud-graphql-schema-generator": "^1.0.0",
+    "rxjs": "^6.3.3"
+  },
+  "devDependencies": {
+    "cross-env": "^5.2.0"
   }
 }
