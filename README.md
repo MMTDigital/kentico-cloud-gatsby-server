@@ -13,6 +13,8 @@
   
 * `KENTICO_CLOUD_PROJECT_ID`
 
+[bash - How do I add environment variables?](https://askubuntu.com/questions/58814/how-do-i-add-environment-variables)
+
 ### Install dependencies:
 
 ```bash
