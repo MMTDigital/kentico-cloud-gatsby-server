@@ -18,8 +18,16 @@
 ```bash
 yarn
 ```
+### Generate the schema
+
+```bash
+yarn run generate-schema
+```
+💁‍♂️ You should notice that a file called `schema.js` has been generated. This is the dynamic schema that is pulled in from your headless CMS. 
 
 ### Start server
+
+⚠️ The command below **will not** work if you have not generated a schema.
 
 ```bash
 yarn start
