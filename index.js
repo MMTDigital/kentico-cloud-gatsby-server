@@ -1,15 +1,10 @@
 const { ApolloServer, gql } = require('apollo-server')
 const schema = require('./schema')
-const { queryTypes, resolvers } = require('./queries')
+const resolvers = require('./resolvers')
 
-const server = new ApolloServer({
-  typeDefs: [
-    queryTypes,
-    schema
-  ],
-  resolvers
-})
+const typeDefs = [ schema ]
+const server = new ApolloServer({ typeDefs, resolvers })
 
 server.listen().then(({ url }) => {
-  console.log(`🚀  Kentico Cloud GraphQL server ready at ${url}`)
+  console.info(`🚀  GraphQL server ready at ${url}`)
 })

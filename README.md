@@ -25,7 +25,7 @@ yarn
 ```bash
 yarn run generate-schema
 ```
-💁‍♂️ You should notice that a file called `schema.js` has been generated. This is the dynamic schema that is pulled in from your headless CMS. Please do not change the gitgnore or check this file into the repo.
+💁‍♂️ You should notice that a file called `kentico-cloud-schema.graphql` has been generated in the `schema` folder. This is the dynamic schema that is pulled in from your headless CMS. Please do not change the gitgnore or check this file into the repo.
 
 ### Start server
 
@@ -34,3 +34,7 @@ yarn run generate-schema
 ```bash
 yarn start
 ```
+
+### Adding more data sources
+
+This server only prescribes Kentico Cloud as a data source, but you are free to add other sources that your GraphQL API can exposes with your Kentico Cloud data.

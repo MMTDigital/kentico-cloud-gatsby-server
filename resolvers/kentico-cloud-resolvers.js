@@ -1,12 +1,5 @@
 const { DeliveryClient } = require('kentico-cloud-delivery')
-const { deliveryConfig } = require('./delivery-config')
-
-const queryTypes = `
-  type Query {
-    items: [ContentItem],
-    itemsByType(type: String!, limit: Int, depth: Int, order: String): [ContentItem]
-}
-`
+const deliveryConfig = require('../config/kentico-delivery-config')
 
 const deliveryClient = new DeliveryClient(deliveryConfig)
 const resolvers = {
@@ -40,7 +33,4 @@ const convertSnakeCaseToPascalCase = (item) => {
     .join('')
 }
 
-module.exports = {
-  resolvers,
-  queryTypes
-}
+module.exports = { resolvers }
