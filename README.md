@@ -25,7 +25,7 @@ yarn
 ```bash
 yarn run generate-schema
 ```
-💁‍♂️ You should notice that a file called `schema.js` has been generated. This is the dynamic schema that is pulled in from your headless CMS. 
+💁‍♂️ You should notice that a file called `schema.js` has been generated. This is the dynamic schema that is pulled in from your headless CMS. Please do not change the gitgnore check this into the repo.
 
 ### Start server
 
