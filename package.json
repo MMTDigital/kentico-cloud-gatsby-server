@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "cross-env node index.js",
-    "generate-schema": "cross-env kc-generate-gql-schema --projectId $KENTICO_CLOUD_PROJECT_ID --createModule --outputFile schema.js"
+    "generate-schema": "cross-env kc-generate-gql-schema --projectId $KENTICO_CLOUD_PROJECT_ID --outputFile ./schema/kentico-cloud-schema.graphql"
   },
   "repository": {
     "type": "git",
@@ -28,6 +28,7 @@
     "graphql": "^14.1.1",
     "kentico-cloud-delivery": "^5.3.1",
     "kentico-cloud-graphql-schema-generator": "^1.0.0",
+    "merge-graphql-schemas": "^1.5.8",
     "rxjs": "^6.3.3"
   },
   "devDependencies": {
