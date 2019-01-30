@@ -1,10 +1,11 @@
-const { ApolloServer, gql } = require('apollo-server')
-const schema = require('./schema')
-const resolvers = require('./resolvers')
+const generateSchema = require('./generate-schema')
+const startServer = require('./server')
 
-const typeDefs = [ schema ]
-const server = new ApolloServer({ typeDefs, resolvers })
+if (!process.env.KENTICO_CLOUD_PROJECT_ID) {
+  throw new Error('Please set the KENTICO_CLOUD_PROJECT_ID environment variable')
+}
 
-server.listen().then(({ url }) => {
-  console.info(`🚀  GraphQL server ready at ${url}`)
-})
+generateSchema()
+  .then(startServer)
+  .then(url => console.info(`🚀  GraphQL server ready at ${url}`))
+  .catch(error => console.error('🚫  Error starting GraphQL server'))
