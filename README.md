@@ -2,6 +2,10 @@
 
 > A graphql server that dynamically updates its schema from your Kentico Cloud instance using webhooks.
 
+<br />
+
+![](https://i.giphy.com/cbG9wtoO8QScw.gif)
+
 ## Getting started
 
 ### Prerequisites
