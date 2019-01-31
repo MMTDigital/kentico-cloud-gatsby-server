@@ -16,6 +16,7 @@
 ### Set the following environment variables on your system:
   
 * `KENTICO_CLOUD_PROJECT_ID`
+* `KENTICO_GRAPHQL_SERVER_PORT` (optional, defaults to 4000)
 
 [bash - How do I add environment variables?](https://askubuntu.com/questions/58814/how-do-i-add-environment-variables)
 
@@ -30,6 +31,16 @@ yarn
 ```bash
 yarn start
 ```
+
+### Visually browse your API and schema
+
+```
+http://localhost:4000
+```
+
+Note: If you set the port an an environment variable, it will be different to the above.
+
+## Other useful information
 
 ### Adding more data sources
 
