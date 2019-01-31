@@ -20,16 +20,8 @@
 ```bash
 yarn
 ```
-### Generate the schema
-
-```bash
-yarn run generate-schema
-```
-💁‍♂️ You should notice that a file called `kentico-cloud-schema.graphql` has been generated in the `schema` folder. This is the dynamic schema that is pulled in from your headless CMS. Please do not change the gitgnore or check this file into the repo.
 
 ### Start server
-
-⚠️ The command below **will not** work if you have not generated a schema.
 
 ```bash
 yarn start
@@ -37,4 +29,24 @@ yarn start
 
 ### Adding more data sources
 
-This server only prescribes Kentico Cloud as a data source, but you are free to add other sources that your GraphQL API can exposes with your Kentico Cloud data.
+This server prescribes Kentico Cloud as a data source, but you are free to add other sources that your GraphQL API can exposes with your Kentico Cloud data.
+
+* Add your schema in the `schema` folder. The schema should have a `.graphql` extension and be **pure, valid graphql schema** — as opposed to — an exported module, string or `gql` function. You do not need to add this file to the index, new schemas will be picked up automatically.
+
+* Add your resolvers in the `resolvers` folder. Your resolvers file should export a default object with one or more resolvers that map to your schema. You do not need to add this file to the index, new resolvers will be picked up automatically.
+
+For more information on how to build schemas and resolvers, check out the Apollo server documentation: 
+
+https://www.apollographql.com/docs/apollo-server/essentials/schema.html
+
+https://www.apollographql.com/docs/apollo-server/essentials/data.html
+
+### Generating the schema manually
+
+Should you need to generate the schema without running the server, you can run:
+
+```bash
+yarn run generate-schema
+```
+
+Your schema will be generated in the following location: `schema/kentico-cloud-schema.graphql`

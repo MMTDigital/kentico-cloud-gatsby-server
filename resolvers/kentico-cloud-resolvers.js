@@ -2,6 +2,7 @@ const { DeliveryClient } = require('kentico-cloud-delivery')
 const deliveryConfig = require('../config/kentico-delivery-config')
 
 const deliveryClient = new DeliveryClient(deliveryConfig)
+
 const resolvers = {
   ContentItem: {
     __resolveType(item, _context, _info) {
@@ -33,4 +34,4 @@ const convertSnakeCaseToPascalCase = (item) => {
     .join('')
 }
 
-module.exports = { resolvers }
+module.exports = resolvers
