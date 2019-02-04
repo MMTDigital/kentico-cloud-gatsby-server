@@ -8,15 +8,16 @@
 
 ## Getting started
 
-### Prerequisites
+### Prerequisites 
 
 * Installed latest stable NodeJS
 * Installed yarn
 
 ### Set the following environment variables on your system:
   
-* `KENTICO_CLOUD_PROJECT_ID`
-* `KENTICO_GRAPHQL_SERVER_PORT` (optional, defaults to 4000)
+* `KENTICO_CLOUD_PROJECT_ID` — **Required**
+* `GRAPHQL_SERVER_PORT` — **Optional** (default `4000`)
+* `GRAPHQL_SERVER_PATH` — **Optional** (default `/graphql`) Note: remember the forward slash
 
 [bash - How do I add environment variables?](https://askubuntu.com/questions/58814/how-do-i-add-environment-variables)
 
@@ -32,13 +33,13 @@ yarn
 yarn start
 ```
 
-### Visually browse your API and schema
+### Visually browse your API and schema or make requests to it
 
 ```
-http://localhost:4000
+http://0.0.0.0:4000/graphql
 ```
 
-Note: If you set the port an an environment variable, it will be different to the above.
+Note: If you changed the port or path your URL will be different to the above.
 
 ## Other useful information
 
